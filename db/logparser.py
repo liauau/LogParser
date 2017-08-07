@@ -17,6 +17,15 @@ UNDERLINE = '_'
 EQUAL = '='
 SLASH = '/'
 
+"""
+log format:
+$remote_addr - $remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for
+
+example:
+137.97.9.45 - - [01/Aug/2017:04:52:17 +0000] "GET /pic/icon_fastcleaner.png HTTP/1.1" 200 15222 "-" "Dalvik/2.1.0 (Linux; U; Android 6.0.1; LS-5505 Build/LYF_LS-5505_01_09)" "-"
+
+"""
+
 
 def parse(line):
     record_str_list = line.split(sep=SPACE)

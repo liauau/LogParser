@@ -1,6 +1,13 @@
-from db.main import DEBUG
+import logging
+
+from db.worker import DEBUG
 
 
-def p(*args, sep=' ', end='\n', file=None):
+def d(msg, *args):
     if DEBUG:
-        print(*args, sep=sep, end=end, file=file)
+        logging.debug(msg, *args)
+
+
+def i(msg, *args):
+    if DEBUG:
+        logging.info(msg, *args)

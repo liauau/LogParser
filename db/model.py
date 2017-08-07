@@ -18,18 +18,18 @@ class Record(object):
 
     def __str__(self, *args, **kwargs):
         return "ip: %s \n" \
-               "access_time: %d \n" \
+               "access_time: %s \n" \
                "method: %s \n" \
-               "status_code: %d\n" \
+               "status_code: %s\n" \
                "api_name: %s\n" \
                "app_pkg_name: %s\n" \
                "locale: %s\n" \
-               "install_time: %d\n" \
+               "install_time: %s\n" \
                "user_id: %s\n" \
-               "android_version: %d\n" \
-               "app_version: %d\n" \
+               "android_version: %s\n" \
+               "app_version: %s\n" \
                "device_model: %s\n" \
-               "update_time: %d\n" \
+               "update_time: %s\n" \
                % (self.ip,
                   self.access_time,
                   self.method,
@@ -44,4 +44,3 @@ class Record(object):
                   self.device_model,
                   self.update_time
                   )
-
