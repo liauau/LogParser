@@ -3,9 +3,6 @@ import time
 
 from db.model import Record
 
-API_AD_CONFIG = 'ad_config'
-API_AD_CRACK = 'ad_crack'
-
 EMPTY = ''
 SPACE = ' '
 LEFT = '['
@@ -50,12 +47,12 @@ def parse(line):
     d = dict([param.replace(UNDERLINE, EMPTY).split(EQUAL) for param in query_params_list])
     r.app_pkg_name = get_param(d, 'appPkgName')
     r.locale = get_param(d, 'locale')
-    r.install_time = int(get_param(d, 'installTime'))
+    r.install_time = (get_param(d, 'installTime'))
     r.user_id = get_param(d, 'userId')
-    r.android_version = int(get_param(d, 'androidVersion'))
-    r.app_version = int(get_param(d, 'appVersion'))
+    r.android_version = (get_param(d, 'androidVersion'))
+    r.app_version = (get_param(d, 'appVersion'))
     r.device_model = get_param(d, 'deviceModel')
-    r.update_time = int(get_param(d, 'updateTime'))
+    r.update_time = (get_param(d, 'updateTime'))
 
     return r
 
@@ -71,4 +68,4 @@ def get_utc_timestamp(time_str):
 def get_param(d, keyword):
     if keyword in d.keys():
         return d[keyword]
-    return None
+    return ''

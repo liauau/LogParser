@@ -33,5 +33,3 @@ KEY_APP_VERSION = 'app_version'
 KEY_DEVICE_MODEL = 'device_model'
 KEY_UPDATE_TIME = 'update_time'
 
-logging.root.setLevel(level=logging.INFO)
-logging.basicConfig(format='%(asctime)s: %(levelname)s: %(message)s')
