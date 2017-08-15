@@ -1,6 +1,6 @@
 class Record(object):
     def __init__(self, **rd):
-        if rd is not None:
+        if rd:
             self.__dict__.update(rd)
             return
 
