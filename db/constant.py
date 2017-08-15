@@ -20,6 +20,7 @@ KEY_VALUE = 'value'
 """
 keys of Record
 """
+KEY_ID = '_id'
 KEY_IP = 'ip'
 KEY_ACCESS_TIME = 'access_time'
 KEY_ACCESS_TIME_ZONE = 'access_time_zone'
