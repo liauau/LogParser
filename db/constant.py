@@ -9,11 +9,13 @@ DB_NAME = "crack_stat"
 collections
 """
 COLLECTION_PKG_NAMES = 'pkg_names'
+COLLECTION_APP_VERSIONS = 'app_versions'
 
 """
 keys of pkg_names
 """
 KEY_NAME = 'name'
+KEY_VALUE = 'value'
 
 """
 keys of Record

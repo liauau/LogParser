@@ -3,8 +3,8 @@ import re
 from os.path import join
 from pprint import pprint
 
+from db.worker import Worker
 from env import ROOT
-from .worker import Worker
 
 handled_file_path = join(ROOT, 'config', 'handled_files.txt')
 LOG_DIR = join(ROOT, 'input', 'nginx')
@@ -51,6 +51,11 @@ def go(log_dir):
     for fn in ufns:
         if wk.handle_file(join(log_dir, fn)):
             done(fn)
+
+
+def build_app_version_collection():
+    wk = Worker()
+    wk.build_app_version_collection()
 
 
 if __name__ == '__main__':

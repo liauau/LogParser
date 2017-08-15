@@ -1,5 +1,9 @@
 class Record(object):
-    def __init__(self):
+    def __init__(self, **rd):
+        if rd is not None:
+            self.__dict__.update(rd)
+            return
+
         self.ip = ''
         self.access_time = ''
         self.access_time_zone = ''
