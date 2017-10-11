@@ -16,6 +16,7 @@ keys of pkg_names
 """
 KEY_NAME = 'name'
 KEY_VALUE = 'value'
+KEY_COUNT = 'count'
 
 """
 keys of Record
