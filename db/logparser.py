@@ -21,6 +21,7 @@ $remote_addr - $remote_user [$time_local] $request $status $body_bytes_sent $htt
 example:
 137.97.9.45 - - [01/Aug/2017:04:52:17 +0000] "GET /pic/icon_fastcleaner.png HTTP/1.1" 200 15222 "-" "Dalvik/2.1.0 (Linux; U; Android 6.0.1; LS-5505 Build/LYF_LS-5505_01_09)" "-"
 
+223.176.120.107 - - [06/Dec/2017:23:57:21 +0000] "GET /v1/ad_crack/get?_appPkgName=apptrends.live_wallpaper.photo_animation.scorpio&_locale=US&_installTime=1512519304&_userId=6349336a-778b-45fc-82d1-087833afedff&_androidVersion=22&_appVersion=1&_deviceModel=GiONEE_WBL7352&_updateTime=1512519304 HTTP/1.1" 200 2101 "-" "Dalvik/2.1.0 (Linux; U; Android 5.1; P5L Build/LMY47D)" "-"
 """
 
 
@@ -44,15 +45,15 @@ def parse(line):
     query_params = query.split(MARK)[1]
     query_params_list = query_params.split(AND)
 
-    d = dict([param.replace(UNDERLINE, EMPTY).split(EQUAL) for param in query_params_list])
-    r.app_pkg_name = get_param(d, 'appPkgName')
-    r.locale = get_param(d, 'locale')
-    r.install_time = (get_param(d, 'installTime'))
-    r.user_id = get_param(d, 'userId')
-    r.android_version = (get_param(d, 'androidVersion'))
-    r.app_version = (get_param(d, 'appVersion'))
-    r.device_model = get_param(d, 'deviceModel')
-    r.update_time = (get_param(d, 'updateTime'))
+    d = dict([param.split(EQUAL) for param in query_params_list])
+    r.app_pkg_name = get_param(d, '_appPkgName')
+    r.locale = get_param(d, '_locale')
+    r.install_time = (get_param(d, '_installTime'))
+    r.user_id = get_param(d, '_userId')
+    r.android_version = (get_param(d, '_androidVersion'))
+    r.app_version = (get_param(d, '_appVersion'))
+    r.device_model = get_param(d, '_deviceModel')
+    r.update_time = (get_param(d, '_updateTime'))
 
     return r
 
