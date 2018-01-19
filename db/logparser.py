@@ -45,7 +45,8 @@ def parse(line):
     query_params = query.split(MARK)[1]
     query_params_list = query_params.split(AND)
 
-    d = dict([param.split(EQUAL) for param in query_params_list])
+    d = dict([param.split(EQUAL) for param in query_params_list if len(param.split(EQUAL)) >= 2])
+
     r.app_pkg_name = get_param(d, '_appPkgName')
     r.locale = get_param(d, '_locale')
     r.install_time = (get_param(d, '_installTime'))
